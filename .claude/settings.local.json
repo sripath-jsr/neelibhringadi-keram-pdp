@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -L -o stitch-screenshot.png \"https://lh3.googleusercontent.com/aida/ADBb0uixzy-YrBtpp41s4gsudmEXPq9BbIbpoRW9-_AQQiHSWpOdQtLfbKJ19Ry7KVEwRU_nP2eIQaFrMP2uREDriLa8wlurJzt0FJD9Nu9EurCtNKutkF1_XvuMB25Q1mN_VdSSX5qTykUDdIMPY1A2f-RcYOc79dFPSsRLB5xaAQ9JHrRO7YSBURr7D3WzCpgYKEgB7dm1UzRDF2nyu9Ml_PWPKmtEB7OGolS_mATBDaJzxQKASfV_wQMWkA\")",
+      "mcp__marketing-skills__skills_list",
+      "WebFetch(domain:keralaayurveda.com)",
+      "Bash(mkdir -p \"/Users/sripathhariharan/Documents/Claude/Projects/Shopify PDP/reference-assets\")",
+      "Bash(curl -L -o \"01-product-main.png\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/Neelibringadikeram.png\")",
+      "Bash(curl -L -o \"02-feature-1.webp\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/1_a973f06b-d027-419f-9df2-96de350f24c6.webp\")",
+      "Bash(curl -L -o \"03-feature-2.webp\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/2_5fc1265d-ba26-4111-9d5c-34351d1ee325.webp\")",
+      "Bash(curl -L -o \"04-feature-3.webp\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/3_2637a218-fecd-4088-a108-f2ed456d9863.webp\")",
+      "Bash(curl -L -o \"05-feature-4.webp\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/4_d8a23628-9dd7-4c53-b420-22fff723a1aa.webp\")",
+      "Bash(curl -L -o \"06-feature-5.webp\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/5_c0d26917-138a-4c00-a7da-dafd60c1857b.webp\")",
+      "Bash(curl -L -o \"07-feature-6.webp\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/6_34a44205-e4e0-47e1-a9c4-003f1874234a.webp\")",
+      "Bash(curl -L -o \"08-feature-7.webp\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/7_d834891a-8306-41be-a47d-1cd882eb7523.webp\")",
+      "Bash(curl -L -o \"09-back-label.webp\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/NeeliBack.webp\")",
+      "Bash(wait)",
+      "Read(//Users/sripathhariharan/Downloads/**)",
+      "Bash(python3 -c ':*)",
+      "Bash(pip3 install:*)",
+      "Bash(curl -L -o \"cross-sell-bhringarajasava.png\" \"https://cdn.shopify.com/s/files/1/0896/2500/2297/files/Bringarajasava.png\")",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow available'\\)\")",
+      "Bash(python3 -m pip list)",
+      "Bash(brew list:*)",
+      "WebSearch",
+      "WebFetch(domain:pixabay.com)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(open \"/Users/sripathhariharan/Documents/Claude/Projects/Shopify PDP/index.html\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/sripathhariharan/Documents/Claude/Projects/Shopify PDP/reference-assets/kal - LOGO@2x.png\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/sripathhariharan/Documents/Claude/Projects/Shopify PDP/reference-assets/kal - LOGO.png\")",
+      "mcp__claude_ai_Figma__use_figma",
+      "Bash(awk '/\\\\.timeline-section/,/^\\\\}/' \"/Users/sripathhariharan/Documents/Claude/Projects/Shopify PDP/styles.css\")",
+      "Bash(awk '/@media \\\\\\(min-width: 768px\\\\\\)/,/@media \\\\\\(min-width: 1024px\\\\\\)/' \"/Users/sripathhariharan/Documents/Claude/Projects/Shopify PDP/styles.css\")",
+      "Bash(awk '/\\\\.go-deeper-section/,/^  \\\\}/' \"/Users/sripathhariharan/Documents/Claude/Projects/Shopify PDP/styles.css\")",
+      "Bash(npm list:*)"
+    ]
+  }
+}
