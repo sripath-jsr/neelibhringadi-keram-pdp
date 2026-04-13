@@ -1056,8 +1056,7 @@
 
     /* Below the fold: full width */
     .technical-content { max-width: 56rem; margin: 0 auto; padding: 3rem 2.5rem; }
-    .ingredients-section { padding: 3rem 2.5rem; }
-    .ingredients-grid {
+    .whats-inside-section .ingredients-grid {
       display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 1rem; max-width: 56rem; margin: 0 auto;
     }
@@ -1065,13 +1064,12 @@
     .ingredient-card__image { width: 100%; height: 8rem; }
     .ingredient-card__body { width: 100%; }
 
-    .expectation-section { padding: 4rem 2.5rem; }
-    .expectation-section h2 { font-size: 2.25rem; }
-
     .timeline-section {
       max-width: 56rem; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid; grid-template-columns: repeat(2, 1fr);
     }
+    .timeline-header { grid-column: 1 / -1; padding: 0 2.5rem; margin-bottom: 2rem; }
+    .timeline-header h2 { font-size: 2.25rem; }
     .timeline-step {
       flex-direction: column;
       border-bottom: none;
@@ -1089,22 +1087,10 @@
 
     .testimonials-section { padding: 4rem 2.5rem; }
     .testimonials-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; max-width: 56rem; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; max-width: 56rem; margin: 0 auto;
     }
     .testimonial { margin-bottom: 0; }
-
-    .whats-in-section { padding: 4rem 2.5rem; }
-    .whats-in-card {
-      max-width: 56rem; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem;
-    }
-    .whats-in-divider { display: none; }
-    .whats-in-yes-col {
-      border-right: 1px solid rgba(192,200,195,0.15);
-      padding-right: 2rem;
-    }
-    .whats-in-section__header { padding: 0; }
 
     .application-section { max-width: 56rem; margin: 0 auto; }
     .application-hero { aspect-ratio: 3/1; }
@@ -1138,9 +1124,6 @@
     .review-item { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
     .reviews-cta { grid-column: 1 / -1; }
 
-    .closing-narrative { padding: 4rem 2.5rem; }
-    .closing-narrative__text { max-width: 32rem; }
-
     .buy-bar { padding: 1rem 2.5rem; }
     .buy-bar__inner { max-width: 28rem; }
   }
@@ -1154,41 +1137,25 @@
     }
     .product-info { padding: 3rem 2.5rem; }
     .product-info h1 { font-size: 2.5rem; }
-    .ingredients-grid { grid-template-columns: repeat(4, 1fr); }
+    .whats-inside-section .ingredients-grid { grid-template-columns: repeat(4, 1fr); }
   }
 
-  /* ─── Triple Milk Section ─── */
-  .triple-milk-section {
-    background: white; padding: 4rem 1.5rem; text-align: center;
-    border-top: 1px solid rgba(192,200,195,0.1);
-  }
-  .triple-milk-section h2 {
-    font-size: 1.5rem; font-weight: 700;
-    color: var(--primary); margin-top: 0.5rem;
-  }
-  .triple-milk-section > p {
-    font-size: 0.875rem; line-height: 1.6;
-    color: rgba(25,29,24,0.6); max-width: 28rem;
-    margin: 0.75rem auto 0;
-  }
+  /* ─── Triple Milk (inside consolidated section) ─── */
   .triple-milk-grid {
-    display: flex; flex-direction: column; gap: 1.5rem;
-    margin-top: 2.5rem; max-width: 40rem; margin-left: auto; margin-right: auto;
+    display: flex; flex-direction: column; gap: 1rem;
+    max-width: 40rem; margin-left: auto; margin-right: auto;
   }
   .milk-item {
     display: flex; align-items: center; gap: 1.25rem;
     text-align: left; background: var(--beige);
-    padding: 1.25rem 1.5rem; border-radius: 0.75rem;
+    padding: 1rem 1.25rem; border-radius: 0.75rem;
   }
   .milk-item__icon {
-    width: 3.5rem; height: 3.5rem; border-radius: 50%;
+    width: 3rem; height: 3rem; border-radius: 50%;
     background: white; display: flex; align-items: center;
     justify-content: center; flex-shrink: 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     border: 1px solid rgba(192,200,195,0.15);
-  }
-  .milk-item__icon .material-symbols-outlined {
-    color: var(--primary); font-size: 1.25rem;
   }
   .milk-item__name {
     font-size: 0.875rem; font-weight: 700;
@@ -1200,13 +1167,12 @@
     color: rgba(25,29,24,0.6); margin-top: 0.125rem;
   }
   @media (min-width: 768px) {
-    .triple-milk-section { padding: 4rem 2.5rem; }
     .triple-milk-grid {
-      flex-direction: row; gap: 1.25rem; max-width: 56rem;
+      flex-direction: row; gap: 1rem; max-width: 56rem;
     }
     .milk-item {
       flex: 1; flex-direction: column; text-align: center;
-      padding: 2rem 1.5rem; gap: 1rem;
+      padding: 1.5rem 1rem; gap: 0.75rem;
     }
   }
 
@@ -1621,12 +1587,25 @@
   /* ─── V2 Desktop overrides ─── */
   @media (min-width: 768px) {
     .reaction-callout { padding: 4rem 2.5rem; }
-    .sensory-testimonial { margin: 1rem auto; }
-    .persona-tiles { grid-template-columns: repeat(4, 1fr); }
+    .reaction-callout h2 { font-size: 2rem; }
+    .sensory-testimonial { margin: 1rem auto; max-width: 56rem; }
+    .persona-section { padding: 4rem 2.5rem; }
+    .persona-tiles { grid-template-columns: repeat(4, 1fr); max-width: 56rem; margin-left: auto; margin-right: auto; }
     .whats-inside-section { padding: 4rem 2.5rem; }
-    .comparison-table { grid-template-columns: repeat(3, 1fr); }
+    .whats-inside-header h2 { font-size: 2rem; }
     .comparison-section { padding: 4rem 2.5rem; }
+    .comparison-section h2 { font-size: 2rem; }
+    /* Stack comparison on iPad, 3-col on desktop */
+    .comparison-table { max-width: 56rem; margin-left: auto; margin-right: auto; }
     .safety-section { padding: 2.5rem; }
+    .safety-content { max-width: 56rem; }
+    .application-note { max-width: 56rem; margin: 0 auto; }
     .closing-cta { padding: 5rem 2.5rem; }
+    .closing-cta__text { font-size: 1.75rem; max-width: 32rem; }
     .usage-headline { padding: 1rem 2.5rem; }
+    .go-deeper-section { padding: 3rem 2.5rem; }
+  }
+
+  @media (min-width: 1024px) {
+    .comparison-table { grid-template-columns: repeat(3, 1fr); }
   }
