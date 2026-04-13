@@ -1497,13 +1497,19 @@
     color: var(--primary); margin-top: 0.5rem;
   }
   .comparison-table {
-    display: grid; grid-template-columns: 1fr;
-    gap: 1rem; margin-top: 2rem;
-    max-width: 56rem; margin-left: auto; margin-right: auto;
+    display: flex; gap: 1rem; margin-top: 2rem;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.25rem 1.5rem 1rem;
+    margin-left: -1.5rem; margin-right: -1.5rem;
+    scrollbar-width: none;
   }
+  .comparison-table::-webkit-scrollbar { display: none; }
   .comparison-col {
     background: var(--beige); border-radius: 0.75rem;
     padding: 1.5rem; text-align: left;
+    min-width: 16.5rem; flex-shrink: 0;
+    scroll-snap-align: center;
   }
   .comparison-col--highlight {
     background: var(--primary); color: var(--cream);
@@ -1533,6 +1539,22 @@
   .comparison-row p {
     font-size: 0.8125rem; line-height: 1.5;
     color: var(--on-surface);
+  }
+
+  /* Scroll indicator dots (mobile only) */
+  .comparison-dots {
+    display: flex; justify-content: center;
+    gap: 0.375rem; margin-top: 1rem;
+  }
+  .comparison-dot {
+    width: 0.375rem; height: 0.375rem;
+    border-radius: 50%; background: rgba(25,29,24,0.15);
+    border: none; padding: 0; cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .comparison-dot.active {
+    background: var(--primary);
+    width: 1.25rem; border-radius: 0.25rem;
   }
 
   /* Closing CTA */
@@ -1595,8 +1617,15 @@
     .whats-inside-header h2 { font-size: 2rem; }
     .comparison-section { padding: 4rem 2.5rem; }
     .comparison-section h2 { font-size: 2rem; }
-    /* Stack comparison on iPad, 3-col on desktop */
-    .comparison-table { max-width: 56rem; margin-left: auto; margin-right: auto; }
+    /* Reset comparison to grid on tablet+ */
+    .comparison-table {
+      display: grid; grid-template-columns: 1fr;
+      overflow-x: visible; scroll-snap-type: none;
+      padding: 0; margin-left: auto; margin-right: auto;
+      max-width: 56rem;
+    }
+    .comparison-col { min-width: unset; }
+    .comparison-dots { display: none; }
     .safety-section { padding: 2.5rem; }
     .safety-content { max-width: 56rem; }
     .application-note { max-width: 56rem; margin: 0 auto; }

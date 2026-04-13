@@ -611,6 +611,11 @@
         <div class="comparison-row"><strong>Side effects</strong><p>Scalp irritation, dependency, hormonal effects</p></div>
       </div>
     </div>
+    <div class="comparison-dots">
+      <button class="comparison-dot active" onclick="scrollComparison(0)" aria-label="Card 1"></button>
+      <button class="comparison-dot" onclick="scrollComparison(1)" aria-label="Card 2"></button>
+      <button class="comparison-dot" onclick="scrollComparison(2)" aria-label="Card 3"></button>
+    </div>
   </section>
 
   <!-- Go Deeper / Accordion -->
@@ -762,6 +767,35 @@
   let cartQty = 1;
   let currentPrice = 315;
   let currentGalleryIndex = 0;
+
+  // ─── Comparison scroll (mobile horizontal cards) ───
+  function scrollComparison(index) {
+    const table = document.querySelector('.comparison-table');
+    const cards = table.querySelectorAll('.comparison-col');
+    if (cards[index]) {
+      cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+    document.querySelectorAll('.comparison-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+  // Auto-sync dots on scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const table = document.querySelector('.comparison-table');
+    if (!table) return;
+    const cards = table.querySelectorAll('.comparison-col');
+    const dots = document.querySelectorAll('.comparison-dot');
+    let ticking = false;
+    table.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollLeft = table.scrollLeft;
+        const cardWidth = cards[0].offsetWidth + 16; // gap
+        const activeIndex = Math.round(scrollLeft / cardWidth);
+        dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
+        ticking = false;
+      });
+    }, { passive: true });
+  });
 
   // ─── Header scroll effect ───
   const header = document.getElementById('siteHeader');
