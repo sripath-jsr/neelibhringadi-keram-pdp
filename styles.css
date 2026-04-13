@@ -1508,7 +1508,7 @@
   .comparison-col {
     background: var(--beige); border-radius: 0.75rem;
     padding: 1.5rem; text-align: left;
-    min-width: 16.5rem; flex-shrink: 0;
+    min-width: 80vw; flex-shrink: 0;
     scroll-snap-align: center;
   }
   .comparison-col--highlight {
