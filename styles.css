@@ -1066,7 +1066,7 @@
 
     .timeline-section {
       max-width: 56rem; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(2, 1fr);
+      display: grid; grid-template-columns: repeat(3, 1fr);
     }
     .timeline-header { grid-column: 1 / -1; padding: 0 2.5rem; margin-bottom: 2rem; }
     .timeline-header h2 { font-size: 2.25rem; }
@@ -1358,6 +1358,24 @@
   .sensory-testimonial span {
     font-style: normal; font-weight: 600;
     color: rgba(25,29,24,0.5); font-size: 0.75rem;
+  }
+
+  /* Timeline inline proof quote */
+  .timeline-proof {
+    display: flex; align-items: flex-start; gap: 0.375rem;
+    margin-top: 0.75rem; padding: 0.5rem 0.625rem;
+    background: rgba(196,155,85,0.06);
+    border-left: 2px solid var(--amber-500);
+    border-radius: 0 0.375rem 0.375rem 0;
+  }
+  .timeline-proof svg { flex-shrink: 0; margin-top: 0.0625rem; }
+  .timeline-proof p {
+    font-size: 0.75rem; line-height: 1.5;
+    color: var(--on-surface); font-style: italic;
+  }
+  .timeline-proof span {
+    font-style: normal; font-weight: 600;
+    color: rgba(25,29,24,0.4); font-size: 0.6875rem;
   }
 
   /* Timeline header (merged) */
