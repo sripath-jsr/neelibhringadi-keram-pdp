@@ -584,11 +584,49 @@
     </div>
   </section>
 
-  <!-- How It Compares (CRO #9) -->
+  <!-- How It Compares — Us vs Them (mobile: 2-col rows, desktop: 3-col cards) -->
   <section class="comparison-section">
     <p class="section-label">Compare</p>
     <h2>How it compares</h2>
-    <div class="comparison-table">
+
+    <!-- Mobile: 2-column row-based Us vs Them -->
+    <div class="compare-mobile">
+      <div class="compare-header-row">
+        <div class="compare-us-label">Neelibhringadi</div>
+        <div class="compare-them-label">Generic oil</div>
+      </div>
+      <div class="compare-row">
+        <p class="compare-row__label">Ingredients</p>
+        <div class="compare-row__cells">
+          <div class="compare-cell compare-cell--us">4 herbs + triple-milk + 15 botanicals</div>
+          <div class="compare-cell compare-cell--them">Mineral oil + synthetic fragrance</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <p class="compare-row__label">Processing</p>
+        <div class="compare-row__cells">
+          <div class="compare-cell compare-cell--us">11-day classical extraction</div>
+          <div class="compare-cell compare-cell--them">Machine-mixed, same day</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <p class="compare-row__label">Results</p>
+        <div class="compare-row__cells">
+          <div class="compare-cell compare-cell--us">Fall reduction in 2–3 weeks</div>
+          <div class="compare-cell compare-cell--them">Cosmetic only — coats surface</div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <p class="compare-row__label">Side effects</p>
+        <div class="compare-row__cells">
+          <div class="compare-cell compare-cell--us">None reported</div>
+          <div class="compare-cell compare-cell--them">Pore-clogging, buildup</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop: 3-column cards (hidden on mobile) -->
+    <div class="compare-desktop">
       <div class="comparison-col comparison-col--highlight">
         <h4>Neelibhringadi Keram</h4>
         <div class="comparison-row"><strong>Ingredients</strong><p>4 primary herbs + triple-milk base + 15 supporting botanicals</p></div>
@@ -610,11 +648,6 @@
         <div class="comparison-row"><strong>Results timeline</strong><p>3–6 months; stops working if discontinued</p></div>
         <div class="comparison-row"><strong>Side effects</strong><p>Scalp irritation, dependency, hormonal effects</p></div>
       </div>
-    </div>
-    <div class="comparison-dots">
-      <button class="comparison-dot active" onclick="scrollComparison(0)" aria-label="Card 1"></button>
-      <button class="comparison-dot" onclick="scrollComparison(1)" aria-label="Card 2"></button>
-      <button class="comparison-dot" onclick="scrollComparison(2)" aria-label="Card 3"></button>
     </div>
   </section>
 
@@ -768,34 +801,6 @@
   let currentPrice = 315;
   let currentGalleryIndex = 0;
 
-  // ─── Comparison scroll (mobile horizontal cards) ───
-  function scrollComparison(index) {
-    const table = document.querySelector('.comparison-table');
-    const cards = table.querySelectorAll('.comparison-col');
-    if (cards[index]) {
-      cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-    }
-    document.querySelectorAll('.comparison-dot').forEach((d, i) => d.classList.toggle('active', i === index));
-  }
-  // Auto-sync dots on scroll
-  document.addEventListener('DOMContentLoaded', () => {
-    const table = document.querySelector('.comparison-table');
-    if (!table) return;
-    const cards = table.querySelectorAll('.comparison-col');
-    const dots = document.querySelectorAll('.comparison-dot');
-    let ticking = false;
-    table.addEventListener('scroll', () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const scrollLeft = table.scrollLeft;
-        const cardWidth = cards[0].offsetWidth + 16; // gap
-        const activeIndex = Math.round(scrollLeft / cardWidth);
-        dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
-        ticking = false;
-      });
-    }, { passive: true });
-  });
 
   // ─── Header scroll effect ───
   const header = document.getElementById('siteHeader');
