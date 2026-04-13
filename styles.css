@@ -1617,15 +1617,16 @@
     .whats-inside-header h2 { font-size: 2rem; }
     .comparison-section { padding: 4rem 2.5rem; }
     .comparison-section h2 { font-size: 2rem; }
-    /* Reset comparison to grid on tablet+ */
+    /* Reset comparison to stacked cards on tablet+ */
     .comparison-table {
       display: grid; grid-template-columns: 1fr;
       overflow-x: visible; scroll-snap-type: none;
       padding: 0; margin-left: auto; margin-right: auto;
-      max-width: 56rem;
+      max-width: 56rem; gap: 1rem; margin-top: 2rem;
     }
-    .comparison-col { min-width: unset; }
+    .comparison-col { min-width: unset; flex-shrink: 1; }
     .comparison-dots { display: none; }
+    .comparison-section { padding: 4rem 2.5rem; }
     .safety-section { padding: 2.5rem; }
     .safety-content { max-width: 56rem; }
     .application-note { max-width: 56rem; margin: 0 auto; }
@@ -1636,5 +1637,5 @@
   }
 
   @media (min-width: 1024px) {
-    .comparison-table { grid-template-columns: repeat(3, 1fr); }
+    .comparison-table { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   }
