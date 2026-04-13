@@ -1497,8 +1497,8 @@
     color: var(--primary); margin-top: 0.5rem;
   }
   /* ─── Mobile: Us vs Them 2-column rows ─── */
-  .compare-mobile { margin-top: 1.5rem; }
-  .compare-desktop { display: none; }
+  .compare-mobile { margin-top: 1.5rem; text-align: left; }
+  .compare-desktop { display: none !important; }
 
   .compare-header-row {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -1639,9 +1639,9 @@
     .comparison-section { padding: 4rem 2.5rem; }
     .comparison-section h2 { font-size: 2rem; }
     /* Swap to desktop 3-column cards on tablet+ */
-    .compare-mobile { display: none; }
+    .compare-mobile { display: none !important; }
     .compare-desktop {
-      display: grid; grid-template-columns: 1fr;
+      display: grid !important; grid-template-columns: 1fr;
       gap: 1rem; margin-top: 2rem;
       max-width: 56rem; margin-left: auto; margin-right: auto;
     }
